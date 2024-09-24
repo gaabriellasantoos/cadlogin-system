@@ -16,7 +16,14 @@ class AuthController
             $senha = $_POST['senha'];
 
             //Chama o método do model para encontrar o usuario pelo email
-            
+            $user = User::findByEmail($email);
+
+            if($user && password_verify($senha, $user['senha'])){//Verifica se a senha corresponde a um hash
+                session_start();
+                //Armazena na sessão o ID do usuário que está logado e seu perfil
+
+            }
+
       }
   }
 }
