@@ -21,6 +21,9 @@ class AuthController
             if($user && password_verify($senha, $user['senha'])){//Verifica se a senha corresponde a um hash
                 session_start();
                 //Armazena na sessão o ID do usuário que está logado e seu perfil
+                $_SESSION['usuario_id'] = $user ['id'];
+                $_SESSION['perfil'] = $user ['perfil'];
+                header('');
 
             }
 
