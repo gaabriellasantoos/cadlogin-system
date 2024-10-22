@@ -38,6 +38,13 @@ class User
 
         $stmt->execute($data);
     }
+    //Função para listar todas as informações dos usuários no BD 
+    public static function all(){
+      $conn = Database:: getConnection();
+      $stmt = $conn->query("SELECT * FROM usuarios");
+      return $stmt->fetchALL(PDO::FETCH_ASSOC);
+      
+    }
 }
 
 ?>

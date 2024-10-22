@@ -24,6 +24,20 @@ switch($action){
     case 'login':
         $authController->login();
         //chama o método de login do controlador de autênticação
-       
-}
+        break;
+      case 'register':
+        $userController->register();
+        break;
+        default:
+        $authController->logout();
+        break; 
+        case 'list':
+          $userController->list();
+          break;
+          default:
+          $authController->login();
+        break; 
+
+
+    }
 ?>
